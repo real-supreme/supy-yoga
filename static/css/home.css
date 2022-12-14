@@ -1,0 +1,62 @@
+#signup {
+    display: block;
+    position: relative;
+    margin: 0 auto !important;
+    top: -40vh;
+    left: calc(50% - 24%);
+    width: 25%;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 3px !important;
+    background-color: #d053e3;
+    color: white;
+    font-size: 20px !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a03db5;
+}
+
+button:hover::before {
+    animation: easse 0.5;
+}
+
+button:hover::after {
+    animation: easee 0.5;
+}
+
+@keyframes easse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes easee {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

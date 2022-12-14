@@ -1,0 +1,64 @@
+{% extends './base.html' %}
+{% load static %}
+{% block header %}
+<div class="container">
+    <div class="topper">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+        <h1><strong><a class="navbar-brand" href='{% url 'index' %}'>FlexMoney Yoga</a></strong></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="customnavi">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                <ul class="navbar-nav mx-auto">
+
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" aria-haspopup="true" aria-expanded="false">
+                    <span class='inline'><i class="fas fa-user"></i> <h5>Profile</h5></a></span>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}" aria-haspopup="true" aria-expanded="false">
+                    <span class='inline'><i class="fa fa-sign-out" aria-hidden="true"></i> <h5>Logout</h5></a></span>
+                    </li>
+
+                    {% else %}
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account' %}" aria-haspopup="true" aria-expanded="false">
+                    <span class='inline'><i class="fas fa-user"></i> <h5>Login/Register</h5></a></span>
+                    </li>
+                        {% endif %}
+            </ul>
+        </div>
+        </div>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+<div class="container-fluid">
+<footer class="text-center text-lg-start" style="background-color: #0f0f0f;">
+    <div class="container d-flex justify-content-center py-5">
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <a href='#'><i class="fab fa-facebook-f"></i></a>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <a href="#"> <i class="fab fa-github"></i></a>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </button>
+    </div>
+
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      Made with <i class="fas fa-heart"></i> by <a href="https://real-supreme.web.app" target="_blank">Emmanuel aka real-supreme aka supy</a>
+    </div>
+  </footer>
+</div>
+{% endblock %}

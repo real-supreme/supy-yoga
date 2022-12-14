@@ -1,0 +1,33 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block more_css %}
+<link rel="stylesheet" href="{% static 'css/users.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class='thecontainer'>
+        <div class='content-section' style="max-height: 312px">
+            <div class="media">
+                <img class="rounded-circle account-img" src="https://img.freepik.com/premium-vector/yoga-logo-icon-line-outline-monoline-style_7688-1317.jpg?size=312">
+                <div class="media-body">
+                <h2 class="account-heading custom" style="color:white; margin-bottom: 15px; position:relactive">{{ user.username }}</h2>
+                <p class="custom" style="color:white">{{ user.email }}</p>
+                <br>
+                </div>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class='minh'>
+                <fieldset class="form-group">
+                    <legend class='border-bottom-mb-4'>Profile Info</legend>
+                    {{ u_form|crispy }}
+                </feldset>
+                <div class="form-group">
+                    <button type="submit" class="customButt">Update</button> <strong><h5><a href='{% url 'enroll' %}'>Click here to enroll</a></h5></strong>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

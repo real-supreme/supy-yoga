@@ -1,0 +1,106 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+{% block more_css %}
+ <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock %}
+{% block more_js %}
+    <script src="{% static 'js/users.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class='thecontainer' id="container">
+		<div class="form-container sign-up-container">
+			<form method="POST">
+				{% csrf_token %}
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				{% if messages %}
+					{% for message in messages %}
+						{% if message.tags == 'error' %}
+							<div class="alert alert-danger" role="alert">
+								{{ message }}
+							</div>
+							{% else %}
+							<div class="alert alert-success" role="alert">
+								{{ message }}
+							</div>
+							{% endif %}
+					{% endfor %}
+				{% endif %}
+				<input type="text" name="fullname" placeholder="Full Name" maxlength="100" required id="id_fullname">
+				<input type="text" name="age" placeholder="Age (18-85)" required id="id_age">
+				<input type="text" name="username" placeholder="Username" maxlength="100" autofocus required id="id_username">
+				<input type="text" name="email" placeholder="Email" maxlength="100" required id="id_email">
+				<input type="password" name="password1" autocomplete="new-password" placeholder="Password" required id="id_password1">
+				<input type="password" name="password2" autocomplete="new-password" placeholder="Repeat Password" required id="id_password2">
+				{% if not messages %}
+					<br>
+				{% endif %}
+				<button type='submit'>Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form method="POST">
+				{% csrf_token %}
+				<h1>Sign In</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your account</span>
+				{% if messages %}
+					{% for message in messages %}
+						{% if message.tags == 'error' %}
+							<div class="alert alert-danger" role="alert">
+								{{ message }}
+							</div>
+							{% else %}
+							<div class="alert alert-success" role="alert">
+								{{ message }}
+							</div>
+							{% endif %}
+					{% endfor %}
+				{% endif %}
+				<input type="text" name="username" placeholder="Username" maxlength="150" required id="id_username">
+				<input type="password" name="password" autocomplete="new-password" placeholder="Password" required id="id_password">
+				{% comment %} {{ form }} {% endcomment %}
+				<a href="#">Forgot your password?</a>
+				<button type='submit'>Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To book a Yoga Session - Please Sign in!</p>
+					<button class="ghost" id="signIn" onclick='signinbutt()'>Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start booking your Yoga Classes!</p>
+					<button class="ghost" id="signUp" onclick='signupbutt()'>Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	{% comment %} <script>
+		const signUpButton = document.getElementById('signUp');
+		const signInButton = document.getElementById('signIn');
+		const container = document.getElementById('container');
+
+		signUpButton.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+
+		signInButton.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});
+	</script> {% endcomment %}
+{% endblock %}

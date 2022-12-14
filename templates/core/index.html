@@ -1,0 +1,13 @@
+{% extends 'base_nav.html' %}
+{% load static %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+    {% comment %} <img class='eswiji' src="{% static 'images/left.svg' %}" />
+    <img class='eswiji' src="{% static 'images/right.svg' %}" /> {% endcomment %}
+    <div class='container'>
+        <img class='eswiji' src="https://i.imgur.com/HPa7f40.png" />
+        <a href='{% url 'enroll' %}'><button id='signup'>Book slots!</button></a>
+    </div>
+{% endblock %}
