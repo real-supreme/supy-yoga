@@ -30,10 +30,9 @@ This is a Web application built using Django Framework with the capability, and 
 2. [Implementation](#implementation) 🧾
 	* [Usage](#how-to-run-it) ➕
 	* [Requirements](#requirements) ⚙
-3. [ER Diagram](#) 📚
-4. [Assumptions](#license) ❗
-5. [License](#disclaimer) &copy;
-6. [Contact](#contact) 📩
+3. [ER Diagram](#er-diagram--databases) 📚
+4. [Assumptions](#assumptions) ❗
+5. [License](#license) &copy;
 
 <p style="text-align: right;">
 	<a href="#supy-yoga-flexmoney">Top</a>
@@ -58,12 +57,35 @@ python manage.py runserver
 - Python 3.7+ [(Preferably 3.9.x)](https://www.python.org/downloads/release/python-390/)
 	- django
 	- django-crispy-forms
-  - whitenose
+- whitenose
   
-  <p style="text-align: right;">
+ <p style="text-align: right;">
 	<a href="#table-of-contents">Top</a>
 </p>
 
 ## ER Diagram & Database
 
-_Coming Soon!_
+![flexmoney_ER](https://user-images.githubusercontent.com/70822569/207992263-e9e19dc2-252b-4e6f-a13b-1892976db0e6.png)
+
+Database used could be: `postgresql` which allows 120 simultaneous connections at once. Asynchronous Databases cold also be used.
+<p style="text-align: right;">
+	<a href="#table-of-contents">Top</a>
+</p>
+
+## Assumptions
+
+- There user must login to be able to enroll to a Yoga Batch
+- Regstration to the website is free
+- Enrollment fees is processed successfully without needing to actually implement a payment gateway
+<p style="text-align: right;">
+	<a href="#table-of-contents">Top</a>
+</p>
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) 
+
+Copyright (c) 2022-present real-supreme
+<p style="text-align: right;">
+	<a href="#table-of-contents">Top</a>
+</p>
