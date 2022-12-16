@@ -47,8 +47,14 @@ Supy-Yoga uses both Synchronous and Asynchronous methods, with reliable efficien
 Either download the file zip or use the command line to download the repository
 ```
 git clone https://github.com/real-supreme/supy-fwas.git
+
 python -m pip install -r requirements.txt
+
 cd %FOLDER%
+
+python manage.py makemigrations
+python manage.py migrate
+
 python manage.py runserver
 ``` 
 
