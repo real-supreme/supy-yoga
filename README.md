@@ -92,6 +92,8 @@ Database used could be: `postgresql` which allows 120 simultaneous connections a
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) 
 
 Copyright (c) 2022-present real-supreme
+
+Live Server: https://supy.pythonanywhere.com/
 <p style="text-align: right;">
 	<a href="#table-of-contents">Top</a>
 </p>
