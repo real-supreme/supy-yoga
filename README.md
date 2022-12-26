@@ -30,9 +30,10 @@ This is a Web application built using Django Framework with the capability, and 
 2. [Implementation](#implementation) 🧾
 	* [Usage](#how-to-run-it) ➕
 	* [Requirements](#requirements) ⚙
-3. [ER Diagram](#er-diagram--databases) 📚
+3. [ER Diagram](#er-diagram--database) 📚
 4. [Assumptions](#assumptions) ❗
-5. [License](#license) &copy;
+5 [Scalability Idea](#What-could-be-different) 💡
+6. [License](#license) &copy;
 
 <p style="text-align: right;">
 	<a href="#supy-yoga-flexmoney">Top</a>
@@ -86,6 +87,12 @@ Database used could be: `postgresql` which allows 120 simultaneous connections a
 <p style="text-align: right;">
 	<a href="#table-of-contents">Top</a>
 </p>
+
+## What could be different?
+
+- Could add caching systems
+- Could add asynchronous capabilities
+- Using Connection pooling for faster database transanctions
 
 ## License
 
